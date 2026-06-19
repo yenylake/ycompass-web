@@ -80,15 +80,20 @@ img { max-width: 100%; }
 .dropdown {
   position: absolute; top: calc(100% + 8px); left: 0;
   background: #fff; border: 1px solid var(--line); border-radius: 14px;
-  box-shadow: var(--shadow); padding: .5rem; width: 300px;
+  box-shadow: var(--shadow); padding: .5rem; width: 240px;
   opacity: 0; visibility: hidden; transform: translateY(8px);
   transition: opacity .18s ease, transform .18s ease, visibility .18s;
 }
 .nav-item.open .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
-.dropdown a { display: block; padding: .65rem .8rem; border-radius: 10px; transition: background .15s; }
-.dropdown a:hover { background: var(--purple-soft); }
+.dropdown a { display: block; padding: .55rem .8rem; border-radius: 10px; transition: background .15s, color .15s; color: var(--navy); font-size: .92rem; font-weight: 500; }
+.dropdown a:hover { background: var(--purple-soft); color: var(--purple); }
 .dropdown strong { display: block; color: var(--navy); font-size: .95rem; font-weight: 600; }
 .dropdown span { font-size: .82rem; color: var(--muted); }
+
+/* Mega dropdown (multi-column) */
+.dropdown.mega { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: .4rem; width: max-content; max-width: 92vw; padding: 1.1rem; }
+.mega-col { min-width: 180px; }
+.dropdown.mega .mega-title { display: block; font-family: var(--head); font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--purple); padding: 0 .8rem .5rem; }
 
 .header-actions { display: flex; align-items: center; gap: 1rem; }
 .link-login { font-weight: 600; font-size: .95rem; color: var(--navy); }
@@ -232,7 +237,9 @@ img { max-width: 100%; }
   .nav-item { width: 100%; }
   .nav-link { width: 100%; justify-content: space-between; }
   .dropdown { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; width: 100%; padding-left: 1rem; max-height: 0; overflow: hidden; transition: max-height .25s; }
-  .nav-item.open .dropdown { max-height: 500px; }
+  .nav-item.open .dropdown { max-height: 800px; }
+  .dropdown.mega { display: block; width: 100%; padding: .25rem 0 .5rem 1rem; }
+  .mega-col { margin-bottom: .5rem; }
   .menu-toggle { display: flex; }
   .link-login { display: none; }
   .cols-3 { grid-template-columns: 1fr; }
