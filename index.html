@@ -10,145 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <!-- ===== Header ===== -->
-  <header class="site-header" id="header">
-    <div class="container header-inner">
-      <a href="#top" class="brand" aria-label="YCompass trang chủ">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 32 32" width="28" height="28">
-            <circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/>
-            <path d="M16 5 L20 16 L16 27 L12 16 Z" fill="var(--gold)"/>
-            <circle cx="16" cy="16" r="2.2" fill="#fff"/>
-          </svg>
-        </span>
-        <span class="brand-text">Y<span>Compass</span></span>
-      </a>
-
-      <nav class="main-nav" aria-label="Điều hướng chính">
-        <ul class="nav-list">
-          <li class="nav-item has-menu">
-            <button class="nav-link" aria-expanded="false">Lĩnh vực <span class="caret"></span></button>
-            <div class="dropdown mega">
-              <div class="mega-col">
-                <span class="mega-title">Đầu tư</span>
-                <a href="#experts">Đầu tư tư nhân</a>
-                <a href="#experts">Quỹ đầu cơ</a>
-                <a href="#experts">Quản lý tài sản</a>
-                <a href="#experts">Ngân hàng đầu tư</a>
-              </div>
-              <div class="mega-col">
-                <span class="mega-title">Doanh nghiệp & Tư vấn</span>
-                <a href="#experts">Tư vấn quản trị</a>
-                <a href="#experts">Dịch vụ chuyên nghiệp</a>
-                <a href="#experts">Doanh nghiệp</a>
-                <a href="#experts">Dịch vụ tài chính</a>
-              </div>
-              <div class="mega-col">
-                <span class="mega-title">Ngành nghề</span>
-                <a href="#experts">Công nghệ</a>
-                <a href="#experts">Y tế & Dược phẩm</a>
-                <a href="#experts">Pháp lý & Tuân thủ</a>
-                <a href="#experts">Tiêu dùng & Bán lẻ</a>
-              </div>
-              <a class="mega-feature" href="#experts">
-                <span class="thumb">
-                  <svg viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <rect width="240" height="130" fill="#54249f"/>
-                    <circle cx="120" cy="65" r="46" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="1.5"/>
-                    <circle cx="120" cy="65" r="28" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="1.5"/>
-                    <line x1="120" y1="65" x2="60" y2="30" stroke="rgba(244,180,0,.55)" stroke-width="1.5"/>
-                    <line x1="120" y1="65" x2="195" y2="40" stroke="rgba(244,180,0,.55)" stroke-width="1.5"/>
-                    <line x1="120" y1="65" x2="70" y2="105" stroke="rgba(244,180,0,.55)" stroke-width="1.5"/>
-                    <line x1="120" y1="65" x2="185" y2="100" stroke="rgba(244,180,0,.55)" stroke-width="1.5"/>
-                    <circle cx="120" cy="65" r="14" fill="#F4B400"/>
-                    <circle cx="60" cy="30" r="7" fill="#fff"/>
-                    <circle cx="195" cy="40" r="7" fill="#fff"/>
-                    <circle cx="70" cy="105" r="7" fill="#fff"/>
-                    <circle cx="185" cy="100" r="7" fill="#fff"/>
-                  </svg>
-                </span>
-                <span class="fcap"><strong>Mạng lưới chuyên gia theo ngành</strong><span>Tìm đúng chuyên gia cho lĩnh vực của bạn →</span></span>
-              </a>
-            </div>
-          </li>
-          <li class="nav-item has-menu">
-            <button class="nav-link" aria-expanded="false">Tài nguyên <span class="caret"></span></button>
-            <div class="dropdown mega">
-              <div class="mega-col">
-                <span class="mega-title">Nội dung</span>
-                <a href="#how">Bài viết</a>
-                <a href="#how">Video</a>
-                <a href="#how">Podcast</a>
-                <a href="#how">Sách trắng</a>
-                <a href="#how">Báo cáo</a>
-              </div>
-              <div class="mega-col">
-                <span class="mega-title">Tư liệu chuyên sâu</span>
-                <a href="#how">Bản ghi hội thảo</a>
-                <a href="#how">Webcast theo yêu cầu</a>
-                <a href="#how">Case study</a>
-                <a href="#how">Thư viện YCompass</a>
-              </div>
-              <a class="mega-feature" href="#how">
-                <span class="thumb">
-                  <svg viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <rect width="240" height="130" fill="#161B27"/>
-                    <rect x="74" y="28" width="92" height="74" rx="6" fill="#6A2EC9"/>
-                    <rect x="62" y="38" width="92" height="74" rx="6" fill="#fff" opacity=".92"/>
-                    <rect x="74" y="52" width="58" height="6" rx="3" fill="#161B27"/>
-                    <rect x="74" y="66" width="68" height="5" rx="2.5" fill="#9aa0b0"/>
-                    <rect x="74" y="77" width="50" height="5" rx="2.5" fill="#9aa0b0"/>
-                    <circle cx="150" cy="86" r="14" fill="#F4B400"/>
-                    <path d="M145 86 l4 4 l7 -8" fill="none" stroke="#161B27" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <span class="fcap"><strong>Thư viện YCompass</strong><span>Kho insight chuyên gia, sẵn sàng mọi lúc →</span></span>
-              </a>
-            </div>
-          </li>
-          <li class="nav-item has-menu">
-            <button class="nav-link" aria-expanded="false">Chuyên gia <span class="caret"></span></button>
-            <div class="dropdown">
-              <a href="#contact">Trở thành chuyên gia</a>
-              <a href="#how">Cách thức hoạt động</a>
-              <a href="#contact">Câu hỏi thường gặp</a>
-              <a href="#contact">Giới thiệu chuyên gia</a>
-              <a href="#contact">Tuân thủ</a>
-            </div>
-          </li>
-          <li class="nav-item has-menu">
-            <button class="nav-link" aria-expanded="false">Về chúng tôi <span class="caret"></span></button>
-            <div class="dropdown">
-              <a href="#why">Câu chuyện của chúng tôi</a>
-              <a href="#why">Ban lãnh đạo</a>
-              <a href="#why">Hội đồng quản trị</a>
-              <a href="#why">Phạm vi toàn cầu</a>
-              <a href="#why">Trách nhiệm xã hội</a>
-              <a href="#why">Tin tức</a>
-            </div>
-          </li>
-          <li class="nav-item has-menu">
-            <button class="nav-link" aria-expanded="false">Tuyển dụng <span class="caret"></span></button>
-            <div class="dropdown">
-              <a href="#contact">Cơ hội nghề nghiệp</a>
-              <a href="#contact">Văn hóa & con người</a>
-              <a href="#contact">Phúc lợi</a>
-            </div>
-          </li>
-        </ul>
-      </nav>
-
-      <div class="header-actions">
-        <span class="lang-switch" aria-label="Ngôn ngữ">EN</span>
-        <a href="#contact" class="link-login">Đăng nhập</a>
-        <a href="#contact" class="btn btn-primary">Bắt đầu ngay</a>
-        <button class="menu-toggle" aria-label="Mở menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </header>
+<body data-page="home">
+  <div id="site-header"></div>
 
   <main id="top">
     <!-- ===== 1. Hero ===== -->
@@ -163,11 +26,10 @@
             <a href="#services" class="btn btn-ghost btn-lg">Xem cách chúng tôi giúp bạn</a>
           </div>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <div class="orbit">
-            <span class="dot d1"></span><span class="dot d2"></span>
-            <span class="dot d3"></span><span class="dot d4"></span>
-            <div class="orbit-core">YC</div>
+        <div class="hero-visual">
+          <div class="hero-photo">
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1000&q=80" alt="Chuyên gia YCompass trao đổi cùng khách hàng" loading="eager" />
+            <div class="badge"><span class="dotg">🧭</span><span><strong>2.500+</strong><span>chuyên gia trong mạng lưới</span></span></div>
           </div>
         </div>
       </div>
@@ -199,44 +61,85 @@
             <div class="card-icon">📞</div>
             <h3>Cuộc gọi & gặp gỡ chuyên gia</h3>
             <p>Trao đổi trực tiếp, riêng tư với chuyên gia để thu thập insight chuyên sâu và kiểm chứng giả thuyết của bạn.</p>
-            <a href="#contact" class="card-link">Tìm hiểu thêm →</a>
+            <a href="experts.html" class="card-link">Tìm hiểu thêm →</a>
           </article>
           <article class="card">
             <div class="card-icon">📄</div>
             <h3>Nội dung chuyên gia</h3>
             <p>Truy cập kho nội dung và bản ghi từ các chuyên gia cấp cao, sẵn sàng tham khảo bất cứ lúc nào.</p>
-            <a href="#contact" class="card-link">Tìm hiểu thêm →</a>
+            <a href="resources.html" class="card-link">Tìm hiểu thêm →</a>
           </article>
           <article class="card">
             <div class="card-icon">📊</div>
             <h3>Nghiên cứu & khảo sát</h3>
             <p>Khảo sát định lượng và định tính, nắm bắt quan điểm của giới chuyên môn trên quy mô lớn.</p>
-            <a href="#contact" class="card-link">Tìm hiểu thêm →</a>
+            <a href="resources.html" class="card-link">Tìm hiểu thêm →</a>
           </article>
           <article class="card">
             <div class="card-icon">🎤</div>
             <h3>Sự kiện</h3>
             <p>Hội thảo trực tiếp và trực tuyến, kết nối bạn với các chuyên gia hàng đầu về biến động thị trường.</p>
-            <a href="#contact" class="card-link">Tìm hiểu thêm →</a>
+            <a href="resources.html" class="card-link">Tìm hiểu thêm →</a>
           </article>
           <article class="card">
             <div class="card-icon">🤝</div>
             <h3>Tư vấn & bổ nhiệm</h3>
             <p>Mời chuyên gia tham gia với vai trò cố vấn, thành viên hội đồng quản trị trong những thời điểm then chốt.</p>
-            <a href="#contact" class="card-link">Tìm hiểu thêm →</a>
+            <a href="experts.html" class="card-link">Tìm hiểu thêm →</a>
           </article>
           <article class="card">
             <div class="card-icon">✨</div>
             <h3>Nền tảng myYCompass</h3>
             <p>Bộ công cụ tích hợp AI giúp thu thập insight chính xác, nhanh chóng và trên quy mô lớn.</p>
-            <a href="#contact" class="card-link">Tìm hiểu thêm →</a>
+            <a href="#showcase" class="card-link">Tìm hiểu thêm →</a>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- ===== Showcase (illustration) ===== -->
+    <section class="section section-alt" id="showcase">
+      <div class="container split">
+        <div class="split-copy">
+          <p class="eyebrow">Nền tảng myYCompass</p>
+          <h2>Tất cả insight chuyên gia, trên một nền tảng</h2>
+          <p class="section-sub">Đặt câu hỏi, kết nối chuyên gia, theo dõi dự án và nhận báo cáo tổng hợp — tất cả trong một không gian làm việc tích hợp AI.</p>
+          <ul class="check-list">
+            <li>Tìm kiếm và ghép nối chuyên gia thông minh</li>
+            <li>Lên lịch và quản lý cuộc trao đổi tập trung</li>
+            <li>Tự động tóm tắt và trích xuất insight</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Trải nghiệm nền tảng</a>
+        </div>
+        <div class="split-visual" aria-hidden="true">
+          <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" class="illus">
+            <rect width="420" height="300" rx="18" fill="#fff" stroke="#e7e9f0"/>
+            <rect x="0" y="0" width="420" height="46" rx="18" fill="#161B27"/>
+            <rect x="0" y="28" width="420" height="18" fill="#161B27"/>
+            <circle cx="24" cy="23" r="5" fill="#F4B400"/><circle cx="42" cy="23" r="5" fill="#6A2EC9"/><circle cx="60" cy="23" r="5" fill="#5a6172"/>
+            <rect x="24" y="66" width="120" height="210" rx="10" fill="#f7f6fb"/>
+            <rect x="40" y="86" width="88" height="9" rx="4.5" fill="#6A2EC9"/>
+            <rect x="40" y="108" width="72" height="7" rx="3.5" fill="#c9ccd6"/>
+            <rect x="40" y="124" width="80" height="7" rx="3.5" fill="#c9ccd6"/>
+            <rect x="40" y="140" width="64" height="7" rx="3.5" fill="#c9ccd6"/>
+            <rect x="164" y="66" width="232" height="92" rx="10" fill="#f3eefc"/>
+            <circle cx="196" cy="100" r="16" fill="#6A2EC9"/>
+            <rect x="222" y="92" width="120" height="9" rx="4.5" fill="#54249f"/>
+            <rect x="222" y="110" width="150" height="7" rx="3.5" fill="#b69ae0"/>
+            <rect x="180" y="130" width="200" height="8" rx="4" fill="#fff"/>
+            <rect x="164" y="174" width="110" height="102" rx="10" fill="#f7f6fb"/>
+            <rect x="286" y="174" width="110" height="102" rx="10" fill="#161B27"/>
+            <polyline points="180,250 196,228 212,238 228,210 244,220 260,196" fill="none" stroke="#6A2EC9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="341" cy="210" r="26" fill="none" stroke="#F4B400" stroke-width="6"/>
+            <path d="M341 184 a26 26 0 0 1 22 39" fill="none" stroke="#6A2EC9" stroke-width="6" stroke-linecap="round"/>
+            <rect x="302" y="250" width="78" height="7" rx="3.5" fill="#3a4156"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== 4. Featured experts ===== -->
-    <section class="section section-alt" id="experts">
+    <section class="section" id="experts">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Chuyên gia tiêu biểu</p>
@@ -244,20 +147,20 @@
           <p class="section-sub">Mạng lưới của YCompass quy tụ các chuyên gia giàu kinh nghiệm trải rộng nhiều ngành nghề trọng yếu.</p>
         </div>
         <div class="expert-grid">
-          <article class="expert"><div class="avatar" style="--c1:#6A2EC9">NH</div><h4>Cựu Giám đốc Nhân sự</h4><p>Tập đoàn công nghệ</p></article>
-          <article class="expert"><div class="avatar" style="--c1:#F4B400">TM</div><h4>Chuyên gia Tài chính</h4><p>Ngân hàng & đầu tư</p></article>
-          <article class="expert"><div class="avatar" style="--c1:#161B27">LP</div><h4>Cố vấn Chiến lược</h4><p>Sản xuất & chuỗi cung ứng</p></article>
-          <article class="expert"><div class="avatar" style="--c1:#6A2EC9">VA</div><h4>Chuyên gia AI</h4><p>Dữ liệu & tự động hóa</p></article>
-          <article class="expert"><div class="avatar" style="--c1:#F4B400">DK</div><h4>Giám đốc Marketing</h4><p>Bán lẻ & tiêu dùng</p></article>
-          <article class="expert"><div class="avatar" style="--c1:#161B27">HT</div><h4>Chuyên gia Pháp lý</h4><p>Tuân thủ & quản trị</p></article>
-          <article class="expert"><div class="avatar" style="--c1:#6A2EC9">QB</div><h4>Cố vấn Y tế</h4><p>Dược phẩm & chăm sóc sức khỏe</p></article>
-          <article class="expert"><div class="avatar" style="--c1:#F4B400">PT</div><h4>Chuyên gia Năng lượng</h4><p>Năng lượng & phát triển bền vững</p></article>
+          <article class="expert"><img class="ephoto" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&crop=faces&w=200&h=200&q=80" alt="Chân dung chuyên gia" loading="lazy" /><h4>Cựu Giám đốc Nhân sự</h4><p>Tập đoàn công nghệ</p></article>
+          <article class="expert"><img class="ephoto" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&crop=faces&w=200&h=200&q=80" alt="Chân dung chuyên gia" loading="lazy" /><h4>Chuyên gia Tài chính</h4><p>Ngân hàng & đầu tư</p></article>
+          <article class="expert"><img class="ephoto" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&crop=faces&w=200&h=200&q=80" alt="Chân dung chuyên gia" loading="lazy" /><h4>Cố vấn Chiến lược</h4><p>Sản xuất & chuỗi cung ứng</p></article>
+          <article class="expert"><img class="ephoto" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&crop=faces&w=200&h=200&q=80" alt="Chân dung chuyên gia" loading="lazy" /><h4>Chuyên gia AI</h4><p>Dữ liệu & tự động hóa</p></article>
+          <article class="expert"><img class="ephoto" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&crop=faces&w=200&h=200&q=80" alt="Chân dung chuyên gia" loading="lazy" /><h4>Giám đốc Marketing</h4><p>Bán lẻ & tiêu dùng</p></article>
+          <article class="expert"><img class="ephoto" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&crop=faces&w=200&h=200&q=80" alt="Chân dung chuyên gia" loading="lazy" /><h4>Chuyên gia Pháp lý</h4><p>Tuân thủ & quản trị</p></article>
+          <article class="expert"><img class="ephoto" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&crop=faces&w=200&h=200&q=80" alt="Chân dung chuyên gia" loading="lazy" /><h4>Cố vấn Y tế</h4><p>Dược phẩm & chăm sóc sức khỏe</p></article>
+          <article class="expert"><img class="ephoto" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&crop=faces&w=200&h=200&q=80" alt="Chân dung chuyên gia" loading="lazy" /><h4>Chuyên gia Năng lượng</h4><p>Năng lượng & phát triển bền vững</p></article>
         </div>
       </div>
     </section>
 
     <!-- ===== 5. Why choose (three pillars) ===== -->
-    <section class="section" id="why">
+    <section class="section section-alt" id="why">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Vì sao chọn YCompass</p>
@@ -284,7 +187,7 @@
     </section>
 
     <!-- ===== 6. Four-step workflow ===== -->
-    <section class="section section-alt" id="how">
+    <section class="section" id="how">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Quy trình</p>
@@ -301,7 +204,7 @@
     </section>
 
     <!-- ===== 7. Testimonials ===== -->
-    <section class="section" id="testimonials">
+    <section class="section section-alt" id="testimonials">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Khách hàng nói gì</p>
@@ -345,48 +248,16 @@
           <article class="audience">
             <h3>Chuyên gia</h3>
             <p>Bạn muốn chia sẻ chuyên môn và tham gia mạng lưới.</p>
-            <a href="#" class="btn btn-gold">Trở thành chuyên gia</a>
+            <a href="experts.html" class="btn btn-gold">Trở thành chuyên gia</a>
           </article>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ===== Footer ===== -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <span class="brand-text">Y<span>Compass</span></span>
-        <p>Nền tảng hàng đầu cho chuyên môn con người đáng tin cậy, đồng hành cùng doanh nghiệp Việt ra quyết định tốt hơn.</p>
-      </div>
-      <div class="footer-col">
-        <h5>Khám phá</h5>
-        <a href="#services">Cách chúng tôi giúp bạn</a>
-        <a href="#experts">Lĩnh vực</a>
-        <a href="#how">Tài nguyên</a>
-      </div>
-      <div class="footer-col">
-        <h5>Công ty</h5>
-        <a href="#why">Về chúng tôi</a>
-        <a href="#contact">Tuyển dụng</a>
-        <a href="#contact">Liên hệ</a>
-      </div>
-      <div class="footer-col">
-        <h5>Liên hệ</h5>
-        <a href="mailto:yen@ycompass.vn">yen@ycompass.vn</a>
-        <a href="https://ycompass.vn">ycompass.vn</a>
-        <a href="#contact">Trở thành chuyên gia</a>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <p>© 2026 YCompass. Bảo lưu mọi quyền.</p>
-      <div class="footer-legal">
-        <a href="#">Chính sách bảo mật</a>
-        <a href="#">Điều khoản sử dụng</a>
-      </div>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
 
+  <script src="layout.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

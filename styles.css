@@ -229,6 +229,71 @@ img { max-width: 100%; }
 .footer-legal { display: flex; gap: 1.5rem; }
 .footer-legal a:hover { color: var(--gold); }
 
+/* ===== Real photos ===== */
+.hero-photo { position: relative; width: 100%; }
+.hero-photo img { width: 100%; aspect-ratio: 5/4; object-fit: cover; border-radius: 22px; box-shadow: var(--shadow); display: block; }
+.hero-photo .badge { position: absolute; left: -18px; bottom: 28px; background: #fff; border-radius: 14px; box-shadow: var(--shadow); padding: .8rem 1.1rem; display: flex; align-items: center; gap: .7rem; }
+.hero-photo .badge .dotg { width: 38px; height: 38px; border-radius: 10px; background: var(--purple-soft); display: grid; place-items: center; font-size: 1.2rem; }
+.hero-photo .badge strong { display: block; font-family: var(--head); font-size: 1.05rem; color: var(--navy); line-height: 1; }
+.hero-photo .badge span { font-size: .78rem; color: var(--muted); }
+.subhero-art img, .feature-art img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 18px; box-shadow: 0 24px 50px rgba(22,27,39,.28); display: block; }
+.ephoto { width: 86px; height: 86px; border-radius: 50%; object-fit: cover; margin: 0 auto .9rem; display: block; box-shadow: 0 8px 18px -8px rgba(22,27,39,.45); }
+
+/* ===== Active nav ===== */
+.nav-link.active { color: var(--purple); }
+.nav-link.active::after { content: ""; }
+
+/* ===== Split (illustration block) ===== */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
+.split-copy .section-sub { margin-bottom: 1.4rem; }
+.split-visual .illus { width: 100%; height: auto; filter: drop-shadow(0 24px 50px rgba(22,27,39,.18)); }
+.check-list { list-style: none; display: grid; gap: .8rem; margin-bottom: 1.8rem; }
+.check-list li { padding-left: 2rem; position: relative; color: var(--ink); }
+.check-list li::before { content: "✓"; position: absolute; left: 0; top: 0; width: 1.4rem; height: 1.4rem; background: var(--purple); color: #fff; border-radius: 50%; display: grid; place-items: center; font-size: .75rem; font-weight: 700; }
+
+/* ===== Sub-page hero ===== */
+.subhero { background: radial-gradient(900px 400px at 85% -20%, rgba(106,46,201,.12), transparent), var(--navy); color: #fff; padding: 4.5rem 0; }
+.subhero .container { display: grid; grid-template-columns: 1.1fr .9fr; gap: 3rem; align-items: center; }
+.subhero .eyebrow { color: var(--gold); }
+.subhero h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -.02em; margin-bottom: 1rem; }
+.subhero p.lead { color: rgba(255,255,255,.85); font-size: 1.1rem; max-width: 34rem; margin-bottom: 1.6rem; }
+.subhero .illus { width: 100%; height: auto; }
+.breadcrumb { font-size: .85rem; color: rgba(255,255,255,.6); margin-bottom: 1rem; }
+.breadcrumb a { color: rgba(255,255,255,.8); }
+.breadcrumb a:hover { color: var(--gold); }
+
+/* ===== Generic feature list (sub-pages) ===== */
+.feature-row { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-bottom: 1rem; }
+.feature-row.rev .feature-art { order: 2; }
+.feature-art .illus { width: 100%; height: auto; border-radius: 16px; }
+.feature-text h3 { font-size: 1.5rem; margin-bottom: .7rem; }
+.feature-text p { color: var(--muted); margin-bottom: 1rem; }
+
+/* ===== Tiles (sub-page link grids) ===== */
+.tile-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.3rem; }
+.tile { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 1.6rem; transition: transform .2s, box-shadow .2s; }
+.tile:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.tile .t-ico { width: 44px; height: 44px; border-radius: 12px; background: var(--purple-soft); display: grid; place-items: center; font-size: 1.3rem; margin-bottom: 1rem; }
+.tile h3 { font-size: 1.12rem; margin-bottom: .4rem; }
+.tile p { color: var(--muted); font-size: .92rem; }
+
+/* ===== Role list (careers) ===== */
+.role-list { display: grid; gap: .9rem; max-width: 52rem; margin: 0 auto; }
+.role { display: flex; justify-content: space-between; align-items: center; gap: 1rem; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 1.2rem 1.5rem; transition: transform .18s, box-shadow .18s, border-color .18s; }
+.role:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-color: transparent; }
+.role strong { display: block; color: var(--navy); font-family: var(--head); font-size: 1.05rem; }
+.role span { color: var(--muted); font-size: .9rem; }
+.role .role-go { color: var(--purple); font-weight: 600; font-size: .92rem; white-space: nowrap; }
+
+/* ===== FAQ ===== */
+.faq { max-width: 48rem; margin: 0 auto; display: grid; gap: .8rem; }
+.faq details { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 1.1rem 1.3rem; }
+.faq summary { font-family: var(--head); font-weight: 600; color: var(--navy); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--purple); font-size: 1.3rem; font-weight: 700; }
+.faq details[open] summary::after { content: "−"; }
+.faq details p { color: var(--muted); margin-top: .8rem; }
+
 /* ===== Responsive ===== */
 @media (max-width: 980px) {
   .hero-inner, .about-grid { grid-template-columns: 1fr; }
@@ -238,6 +303,10 @@ img { max-width: 100%; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .expert-grid { grid-template-columns: repeat(2, 1fr); }
   .audience-grid { grid-template-columns: 1fr; }
+  .split, .subhero .container, .feature-row { grid-template-columns: 1fr; gap: 2rem; }
+  .feature-row.rev .feature-art { order: 0; }
+  .split-visual, .subhero-art { order: -1; }
+  .tile-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 760px) {
   .main-nav { position: fixed; inset: 72px 0 auto 0; background: #fff; border-bottom: 1px solid var(--line); padding: 1rem 4%; margin: 0; transform: translateY(-120%); transition: transform .25s ease; box-shadow: var(--shadow); }
@@ -258,4 +327,5 @@ img { max-width: 100%; }
   .expert-grid { grid-template-columns: repeat(2, 1fr); }
   .hero-stats { gap: 1.5rem; }
   .lang-switch { display: none; }
+  .tile-grid { grid-template-columns: 1fr; }
 }
