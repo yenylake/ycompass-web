@@ -97,8 +97,17 @@ const HEADER_HTML = `
             </a>
           </div>
         </li>
+        <li class="nav-item has-menu" data-nav="business">
+          <button class="nav-link" aria-expanded="false">Dành cho Doanh nghiệp <span class="caret"></span></button>
+          <div class="dropdown">
+            <a href="business.html">Giải pháp cho doanh nghiệp</a>
+            <a href="business.html#how">Cách thức hoạt động</a>
+            <a href="industries.html">Lĩnh vực phục vụ</a>
+            <a href="business.html#cases">Câu chuyện khách hàng</a>
+          </div>
+        </li>
         <li class="nav-item has-menu" data-nav="experts">
-          <button class="nav-link" aria-expanded="false">Chuyên gia <span class="caret"></span></button>
+          <button class="nav-link" aria-expanded="false">Dành cho Chuyên gia <span class="caret"></span></button>
           <div class="dropdown">
             <a href="experts.html">Trở thành chuyên gia</a>
             <a href="experts.html">Cách thức hoạt động</a>

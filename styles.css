@@ -65,12 +65,12 @@ img { max-width: 100%; }
 .brand-text span { color: var(--purple); }
 
 .main-nav { margin-inline: auto; }
-.nav-list { display: flex; gap: .35rem; list-style: none; }
+.nav-list { display: flex; gap: .1rem; list-style: none; }
 .nav-item { position: relative; }
 .nav-link {
   background: none; border: none; cursor: pointer; font-family: var(--head);
   font-size: .97rem; font-weight: 600; color: var(--navy);
-  padding: .6rem .9rem; border-radius: 10px; display: inline-flex; align-items: center; gap: .35rem;
+  padding: .55rem .68rem; border-radius: 10px; display: inline-flex; align-items: center; gap: .3rem;
   transition: background .15s, color .15s;
 }
 .nav-link:hover { background: var(--purple-soft); color: var(--purple); }
