@@ -143,6 +143,8 @@ img { max-width: 100%; }
 .section { padding: 5rem 0; }
 .section-alt { background: var(--bg-alt); }
 .section-head { text-align: center; max-width: 44rem; margin: 0 auto 3rem; }
+.section-head.wide { max-width: none; }
+.section-head.wide h2 { white-space: nowrap; }
 .section-head h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 800; margin-bottom: .8rem; }
 .section-sub { color: var(--muted); font-size: 1.05rem; }
 
@@ -329,4 +331,5 @@ img { max-width: 100%; }
   .hero-stats { gap: 1.5rem; }
   .lang-switch { display: none; }
   .tile-grid { grid-template-columns: 1fr; }
+  .section-head.wide h2 { white-space: normal; }
 }
