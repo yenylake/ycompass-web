@@ -150,6 +150,7 @@ img { max-width: 100%; }
 
 .card-grid { display: grid; gap: 1.5rem; }
 .cols-3 { grid-template-columns: repeat(3, 1fr); }
+.cols-2 { grid-template-columns: repeat(2, 1fr); }
 
 .card, .industry, .resource {
   background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
@@ -324,7 +325,7 @@ img { max-width: 100%; }
   .mega-feature { width: calc(100% - 1rem); flex: none; margin: .3rem 0; }
   .menu-toggle { display: flex; }
   .link-login { display: none; }
-  .cols-3 { grid-template-columns: 1fr; }
+  .cols-3, .cols-2 { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr; }
   .about-cards, .footer-grid { grid-template-columns: 1fr; }
   .expert-grid { grid-template-columns: repeat(2, 1fr); }
