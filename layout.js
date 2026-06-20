@@ -17,51 +17,6 @@ const HEADER_HTML = `
 
     <nav class="main-nav" aria-label="Điều hướng chính">
       <ul class="nav-list">
-        <li class="nav-item has-menu" data-nav="industries">
-          <button class="nav-link" aria-expanded="false">Lĩnh vực <span class="caret"></span></button>
-          <div class="dropdown mega">
-            <div class="mega-col">
-              <span class="mega-title">Đầu tư</span>
-              <a href="industries.html">Đầu tư tư nhân</a>
-              <a href="industries.html">Quỹ đầu cơ</a>
-              <a href="industries.html">Quản lý tài sản</a>
-              <a href="industries.html">Ngân hàng đầu tư</a>
-            </div>
-            <div class="mega-col">
-              <span class="mega-title">Doanh nghiệp & Tư vấn</span>
-              <a href="industries.html">Tư vấn quản trị</a>
-              <a href="industries.html">Dịch vụ chuyên nghiệp</a>
-              <a href="industries.html">Doanh nghiệp</a>
-              <a href="industries.html">Dịch vụ tài chính</a>
-            </div>
-            <div class="mega-col">
-              <span class="mega-title">Ngành nghề</span>
-              <a href="industries.html">Công nghệ</a>
-              <a href="industries.html">Y tế & Dược phẩm</a>
-              <a href="industries.html">Pháp lý & Tuân thủ</a>
-              <a href="industries.html">Tiêu dùng & Bán lẻ</a>
-            </div>
-            <a class="mega-feature" href="industries.html">
-              <span class="thumb">
-                <svg viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <rect width="240" height="130" fill="#54249f"/>
-                  <circle cx="120" cy="65" r="46" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="1.5"/>
-                  <circle cx="120" cy="65" r="28" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="1.5"/>
-                  <line x1="120" y1="65" x2="60" y2="30" stroke="rgba(244,180,0,.55)" stroke-width="1.5"/>
-                  <line x1="120" y1="65" x2="195" y2="40" stroke="rgba(244,180,0,.55)" stroke-width="1.5"/>
-                  <line x1="120" y1="65" x2="70" y2="105" stroke="rgba(244,180,0,.55)" stroke-width="1.5"/>
-                  <line x1="120" y1="65" x2="185" y2="100" stroke="rgba(244,180,0,.55)" stroke-width="1.5"/>
-                  <circle cx="120" cy="65" r="14" fill="#F4B400"/>
-                  <circle cx="60" cy="30" r="7" fill="#fff"/>
-                  <circle cx="195" cy="40" r="7" fill="#fff"/>
-                  <circle cx="70" cy="105" r="7" fill="#fff"/>
-                  <circle cx="185" cy="100" r="7" fill="#fff"/>
-                </svg>
-              </span>
-              <span class="fcap"><strong>Mạng lưới chuyên gia theo ngành</strong><span>Tìm đúng chuyên gia cho lĩnh vực của bạn →</span></span>
-            </a>
-          </div>
-        </li>
         <li class="nav-item has-menu" data-nav="resources">
           <button class="nav-link" aria-expanded="false">Tài nguyên <span class="caret"></span></button>
           <div class="dropdown mega">
@@ -139,9 +94,7 @@ const HEADER_HTML = `
     </nav>
 
     <div class="header-actions">
-      <span class="lang-switch" aria-label="Ngôn ngữ">EN</span>
-      <a href="index.html#contact" class="link-login">Đăng nhập</a>
-      <a href="index.html#contact" class="btn btn-primary">Bắt đầu ngay</a>
+      <a href="index.html#contact" class="link-login">Đăng nhập / Đăng ký</a>
       <button class="menu-toggle" aria-label="Mở menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
