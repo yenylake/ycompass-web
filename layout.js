@@ -82,14 +82,6 @@ const HEADER_HTML = `
             <a href="about.html">Tin tức</a>
           </div>
         </li>
-        <li class="nav-item has-menu" data-nav="careers">
-          <button class="nav-link" aria-expanded="false">Tuyển dụng <span class="caret"></span></button>
-          <div class="dropdown">
-            <a href="careers.html">Cơ hội nghề nghiệp</a>
-            <a href="careers.html">Văn hóa & con người</a>
-            <a href="careers.html">Phúc lợi</a>
-          </div>
-        </li>
       </ul>
     </nav>
 
