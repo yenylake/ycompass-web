@@ -25,7 +25,7 @@ const HEADER_HTML = `
               <a href="resources.html">Bài viết</a>
               <a href="resources.html">Video</a>
               <a href="resources.html">Podcast</a>
-              <a href="resources.html">Sách trắng</a>
+              <a href="resources.html">Nghiên cứu</a>
               <a href="resources.html">Báo cáo</a>
             </div>
             <div class="mega-col">
@@ -38,14 +38,14 @@ const HEADER_HTML = `
             <a class="mega-feature" href="resources.html">
               <span class="thumb">
                 <svg viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <rect width="240" height="130" fill="#161B27"/>
-                  <rect x="74" y="28" width="92" height="74" rx="6" fill="#6A2EC9"/>
+                  <rect width="240" height="130" fill="#0f172a"/>
+                  <rect x="74" y="28" width="92" height="74" rx="6" fill="#2563eb"/>
                   <rect x="62" y="38" width="92" height="74" rx="6" fill="#fff" opacity=".92"/>
-                  <rect x="74" y="52" width="58" height="6" rx="3" fill="#161B27"/>
+                  <rect x="74" y="52" width="58" height="6" rx="3" fill="#0f172a"/>
                   <rect x="74" y="66" width="68" height="5" rx="2.5" fill="#9aa0b0"/>
                   <rect x="74" y="77" width="50" height="5" rx="2.5" fill="#9aa0b0"/>
                   <circle cx="150" cy="86" r="14" fill="#F4B400"/>
-                  <path d="M145 86 l4 4 l7 -8" fill="none" stroke="#161B27" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M145 86 l4 4 l7 -8" fill="none" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </span>
               <span class="fcap"><strong>Thư viện YCompass</strong><span>Kho insight chuyên gia, sẵn sàng mọi lúc →</span></span>
@@ -75,7 +75,6 @@ const HEADER_HTML = `
           <button class="nav-link" aria-expanded="false">Về chúng tôi <span class="caret"></span></button>
           <div class="dropdown">
             <a href="about.html">Câu chuyện của chúng tôi</a>
-            <a href="about.html">Ban lãnh đạo</a>
             <a href="about.html">Hội đồng quản trị</a>
             <a href="about.html">Phạm vi toàn cầu</a>
             <a href="about.html">Trách nhiệm xã hội</a>
