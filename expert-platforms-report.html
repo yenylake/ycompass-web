@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Báo cáo Chuyên sâu: Nền tảng Kết nối Chuyên gia Toàn cầu & Tiềm năng YCompass</title>
+  <meta name="description" content="Nghiên cứu chi tiết lịch sử thành lập, cơ cấu doanh thu, tăng trưởng và phân tích tiềm năng kinh doanh của mô hình mạng lưới chuyên gia tại thị trường Việt Nam." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  
+  <style>
+    /* Custom override styles for the whitepaper report layout */
+    .report-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #1e293b 100%);
+      color: #fff;
+      padding: 6rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .report-hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .report-hero h1 {
+      color: #fff;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .report-hero .meta-info {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .report-hero .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .report-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 4rem;
+      padding: 5rem 0;
+      align-items: start;
+    }
+
+    /* Table of Contents Sticky Sidebar */
+    .toc-sidebar {
+      position: sticky;
+      top: 100px;
+      background: var(--bg-alt);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+    }
+
+    .toc-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: var(--purple);
+      margin-bottom: 1.2rem;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .toc-link {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--muted);
+      transition: color 0.15s;
+      display: block;
+    }
+
+    .toc-link:hover, .toc-link.active {
+      color: var(--purple);
+    }
+
+    /* Main Report Content */
+    .report-body {
+      max-width: 780px;
+    }
+
+    .report-section {
+      margin-bottom: 4.5rem;
+      scroll-margin-top: 100px;
+    }
+
+    .report-section h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+      border-bottom: 2px solid var(--purple-soft);
+      padding-bottom: 0.8rem;
+    }
+
+    .report-section h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 2rem 0 1rem;
+      color: var(--navy-soft);
+    }
+
+    .report-section p {
+      color: var(--ink);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 1.4rem;
+    }
+
+    /* Key Statistics Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin: 2rem 0;
+    }
+
+    .stat-card-custom {
+      background: var(--purple-soft);
+      border: 1px solid rgba(37, 99, 235, 0.12);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .stat-card-custom:hover {
+      transform: translateY(-2px);
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--purple);
+      margin-bottom: 0.4rem;
+      font-family: var(--head);
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy-soft);
+    }
+
+    /* Comparison Table override styling */
+    .comparison-table-wrapper {
+      overflow-x: auto;
+      margin: 2.5rem 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      text-align: left;
+    }
+
+    .comp-table th {
+      background: var(--navy);
+      color: #fff;
+      padding: 1.2rem;
+      font-weight: 700;
+      font-family: var(--head);
+    }
+
+    .comp-table td {
+      padding: 1.2rem;
+      border-bottom: 1px solid var(--line);
+      color: var(--ink);
+      vertical-align: top;
+    }
+
+    .comp-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comp-table tr:nth-child(even) td {
+      background: var(--bg-alt);
+    }
+
+    /* Callout block */
+    .callout-box {
+      background: linear-gradient(135deg, var(--purple-soft) 0%, rgba(244, 180, 0, 0.05) 100%);
+      border-left: 4px solid var(--purple);
+      padding: 1.8rem;
+      border-radius: 0 12px 12px 0;
+      margin: 2.5rem 0;
+    }
+
+    .callout-title {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+    }
+
+    .callout-desc {
+      font-size: 1rem;
+      color: var(--ink);
+      line-height: 1.6;
+      margin: 0 !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .report-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .toc-sidebar {
+        display: none; /* Hide sidebar TOC on mobile */
+      }
+    }
+  </style>
+</head>
+<body data-page="resources">
+
+  <!-- Shared Header -->
+  <div id="site-header"></div>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="report-hero">
+    <div class="container">
+      <p class="eyebrow" style="color: var(--gold);">Nghiên cứu Chuyên môn sâu</p>
+      <h1>Báo cáo Nghiên cứu: Các Nền tảng Kết nối Chuyên gia Toàn cầu & Tiềm năng Mô hình YCompass</h1>
+      <div class="meta-info">
+        <div class="meta-item">📅 <span>24 Tháng 6, 2026</span></div>
+        <div class="meta-item">✍️ <span>Đội ngũ Phát triển YCompass</span></div>
+        <div class="meta-item">📁 <span>Bản phân tích Chiến lược</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REPORT BODY LAYOUT ===== -->
+  <div class="container">
+    <div class="report-layout">
+      
+      <!-- Table of Contents Sidebar -->
+      <aside class="toc-sidebar">
+        <h3 class="toc-title">Mục lục báo cáo</h3>
+        <ul class="toc-list">
+          <li><a href="#founding" class="toc-link active">1. Lịch sử Thành lập</a></li>
+          <li><a href="#revenues" class="toc-link">2. Tài chính & Tăng trưởng</a></li>
+          <li><a href="#vietnam" class="toc-link">3. Tiềm năng Việt Nam</a></li>
+          <li><a href="#models" class="toc-link">4. So sánh mô hình</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="report-body">
+        
+        <!-- Section 1: Founding History -->
+        <section class="report-section" id="founding">
+          <h2>1. Lịch sử Thành lập & Dấu mốc Tiến hóa</h2>
+          <p>
+            Mô hình kết nối chuyên gia bắt nguồn từ sự dịch chuyển nhu cầu của các định chế tài chính cấp cao, phát triển qua các mốc thời gian cốt lõi như sau:
+          </p>
+          
+          <h3>GLG (Gerson Lehrman Group) — Đơn vị khai phá (1998)</h3>
+          <p>
+            Được thành lập tại New York bởi Mark Gerson và Thomas Lehrman. Ban đầu, GLG chỉ xuất bản sách hướng dẫn đầu tư ngành. Nhận thấy khách hàng mong muốn có các cuộc trò chuyện tương tác trực tiếp với người thực thi dự án thay vì đọc báo cáo, họ đã chuyển hướng sang nền tảng kết nối 1-1 điện thoại vào năm 1999 và đặt nền móng cho toàn ngành Expert Network thế giới.
+          </p>
+
+          <h3>AlphaSights — Mô hình Custom Sourcing (2008)</h3>
+          <p>
+            Được thành lập bởi Max Cartellieri và Andrew Heath (cặp cựu sinh viên MBA Stanford) tại London. AlphaSights đã tạo nên đột phá bằng cách loại bỏ cơ sở dữ liệu tĩnh để xây dựng quy trình tuyển dụng chuyên gia trực tiếp theo yêu cầu cụ thể (Custom Sourcing), giải quyết triệt để vấn đề thông tin chuyên môn bị lỗi thời.
+          </p>
+
+          <h3>Clarity.fm — Tư vấn Pay-as-you-go tự phục vụ (2012)</h3>
+          <p>
+            Được sáng lập bởi Dan Martell nhằm kết nối các startup với cố vấn khởi nghiệp theo mức phí tính theo phút (không qua tổng đài hỗ trợ thủ công). Mô hình tinh gọn này đã tối giản hóa chi phí tư vấn cho tệp khách hàng SMEs toàn cầu và được Startups.co mua lại thành công vào năm 2015.
+          </p>
+
+          <h3>ADPList — Cố vấn Cộng đồng Toàn cầu (2020)</h3>
+          <p>
+            Sáng lập bởi Felix Lee và James Baduor tại Singapore trong tâm bão đại dịch COVID-19, ADPList ra đời với vai trò cổng kết nối định hướng thiết kế và sản phẩm miễn phí, tạo lập hệ sinh thái mentorship rộng lớn nhất hiện nay.
+          </p>
+        </section>
+
+        <!-- Section 2: Revenues and Growth -->
+        <section class="report-section" id="revenues">
+          <h2>2. Phân tích Tài chính & Chỉ số Doanh thu</h2>
+          <p>
+            Thị trường kết nối tri thức là một trong những mảng có biên lợi nhuận tốt nhất trong nhóm dịch vụ doanh nghiệp hiện nay:
+          </p>
+
+          <!-- Metrics -->
+          <div class="stats-grid">
+            <div class="stat-card-custom">
+              <div class="stat-number">$4.86B</div>
+              <div class="stat-label">Quy mô thị trường (2026)</div>
+            </div>
+            <div class="stat-card-custom">
+              <div class="stat-number">15-16%</div>
+              <div class="stat-label">Tốc độ Tăng trưởng kép</div>
+            </div>
+            <div class="stat-card-custom">
+              <div class="stat-number">60-70%</div>
+              <div class="stat-label">Biên lợi nhuận gộp B2B</div>
+            </div>
+          </div>
+
+          <p>
+            Doanh thu của các tập đoàn dẫn đầu phản ánh tiềm năng tăng trưởng khổng lồ của ngành. Cụ thể, **GLG** ghi nhận doanh thu hàng năm đạt khoảng **$650 triệu - $700 triệu USD**; **AlphaSights** dao động trong khoảng **$300 triệu - $630 triệu USD** (được định giá lên tới $4.2 tỷ USD năm 2024); và **Third Bridge** báo cáo doanh thu tài chính đạt **£215 triệu bảng Anh** (~$280 triệu USD).
+          </p>
+
+          <h3>Cơ cấu Dòng tiền & Tỷ suất Sinh lời</h3>
+          <p>
+            Các B2B Expert Networks hoạt động nhờ mô hình **bán Credit trả trước** (thường từ $20,000 - $100,000/năm từ các quỹ đầu tư). Với mỗi giờ gọi tư vấn (trị giá trừ credit tương đương $1,000 - $1,500), mạng lưới chi trả chuyên gia khoảng $150 - $300, giữ lại biên lợi nhuận gộp rất cao từ **60% đến 70%** phục vụ công tác tuyển mộ và thiết lập hệ thống tuân thủ bảo mật.
+          </p>
+          <p>
+            Ngược lại, các DIY Marketplaces như Clarity.fm thu lợi nhuận thông qua việc **trích chiết khấu hoa hồng 15%** trên giá trị cuộc gọi. Do hệ thống vận hành tự động không tốn nguồn lực tuyển trạch, biên lợi nhuận gộp của mô hình này đạt tới **90% - 95%** sau khi trừ chi phí cổng thanh toán.
+          </p>
+        </section>
+
+        <!-- Section 3: Potential in Vietnam -->
+        <section class="report-section" id="vietnam">
+          <h2>3. Tiềm năng Kinh doanh khi triển khai tại Việt Nam</h2>
+          <p>
+            Việc phát triển một mạng lưới kết nối chuyên gia nội địa như YCompass tại thị trường Việt Nam sở hữu những lợi thế cạnh tranh mang tính chiến lược:
+          </p>
+
+          <h3>Khoảng trống thị trường lớn (Market Gap)</h3>
+          <p>
+            Doanh nghiệp vừa và nhỏ (SMEs) tại Việt Nam chiếm trên 95% tổng số doanh nghiệp nhưng hoàn toàn không có ngân sách lớn (từ $100k trở lên) để thuê các đơn vị tư vấn Big 4 hoặc McKinsey. YCompass có thể giải quyết các điểm nghẽn tức thì của họ bằng các phiên tham vấn 1-1 tinh gọn với giá trị hợp lý hơn nhiều.
+          </p>
+
+          <h3>Hạn chế về tính bản địa hóa của mạng lưới quốc tế</h3>
+          <p>
+            Các mạng lưới lớn toàn cầu (GLG, AlphaSights) thiếu trầm trọng tệp chuyên gia bản địa nói tiếng Việt hoặc am hiểu tường tận hệ thống văn hóa, pháp lý địa phương. Doanh nghiệp Việt cũng gặp khó khăn khi thanh toán và xuất hóa đơn VAT đối với các đơn vị dịch vụ nước ngoài.
+          </p>
+
+          <h3>Tính khả thi về mặt Tài chính</h3>
+          <p>
+            Mức định giá cuộc gọi phù hợp tại Việt Nam dao động từ **3.000.000đ - 6.000.000đ/giờ**. Mức thù lao thực chi trả cho chuyên gia khoảng **1.500.000đ - 3.000.000đ/giờ**. Biên lợi nhuận gộp mục tiêu đạt **50% - 60%**. 
+          </p>
+          <p>
+            Với tệp khách hàng ổn định từ các quỹ đầu tư PE/VC hoạt động tại Việt Nam cần thẩm định M&A, doanh nghiệp có thể dễ dàng đạt doanh số định kỳ nhờ các gói năm, tạo bàn đạp vững chắc trước khi mở rộng cổng Marketplace cho phân khúc startups đại chúng.
+          </p>
+
+          <!-- Callout -->
+          <div class="callout-box">
+            <div class="callout-title">Khuyến nghị chiến lược cho YCompass</div>
+            <p class="callout-desc">
+              Tập trung đi theo mô hình lai (Hybrid). Giai đoạn đầu, dùng phương pháp tìm kiếm thủ công chất lượng cao (B2B High-touch) để xây dựng lòng tin với các doanh nghiệp lớn và quỹ đầu tư nội địa. Sau khi tích lũy đủ 1,000+ chuyên gia danh tiếng đầu ngành, kích hoạt cổng tự đặt lịch tự động (DIY Marketplace) để phục vụ tệp SMEs với biên lợi nhuận vận hành tối đa.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 4: Comparison Table -->
+        <section class="report-section" id="models">
+          <h2>4. Phân tích So sánh các Mô hình Kết nối</h2>
+          <p>
+            Bảng so sánh chi tiết các phân khúc kết nối chuyên gia toàn cầu giúp định vị định hướng kinh doanh cho YCompass:
+          </p>
+
+          <div class="comparison-table-wrapper">
+            <table class="comp-table">
+              <thead>
+                <tr>
+                  <th>Tiêu chí</th>
+                  <th>B2B Networks (GLG, AlphaSights)</th>
+                  <th>DIY Marketplaces (Clarity, Intro)</th>
+                  <th>Cố vấn YCompass (Hybrid)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Khách hàng mục tiêu</strong></td>
+                  <td>Quỹ PE, Quỹ đầu cơ, Tư vấn chiến lược lớn</td>
+                  <td>Startups, Founders, SMEs nhỏ</td>
+                  <td>Doanh nghiệp tầm trung, Quỹ đầu tư nội địa & SMEs</td>
+                </tr>
+                <tr>
+                  <td><strong>Cách thức vận hành</strong></td>
+                  <td>Săn tìm trực tiếp theo dự án (High-touch)</td>
+                  <td>Đặt lịch tự phục vụ trên sàn (Self-serve)</td>
+                  <td>Lai giữa sàng lọc cao cấp & cổng tự đặt lịch thông minh</td>
+                </tr>
+                <tr>
+                  <td><strong>Cơ cấu chi phí</strong></td>
+                  <td>Gói trả trước hàng năm ($20k - $100k+)</td>
+                  <td>Tính tiền theo phút gọi thực tế ($1 - $10/phút)</td>
+                  <td>Gói Credit doanh nghiệp hoặc trả trước theo giờ tư vấn</td>
+                </tr>
+                <tr>
+                  <td><strong>Biên lợi nhuận gộp</strong></td>
+                  <td>60% - 70%</td>
+                  <td>90% - 95%</td>
+                  <td><strong>50% - 60% (Ước tính tối ưu nội địa)</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Mức độ bảo mật</strong></td>
+                  <td>Cực kỳ cao, quy chuẩn compliance nghiêm ngặt</td>
+                  <td>Trung bình, chia sẻ thông tin đại chúng</td>
+                  <td>Cao, có hợp đồng NDA nội địa và cam kết bảo mật</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Shared Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Layout Scripts -->
+  <script src="layout.js"></script>
+  <script src="script.js"></script>
+
+  <!-- Interactive scroll highlighting for TOC -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('.report-section');
+      const navLinks = document.querySelectorAll('.toc-link');
+
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (pageYOffset >= (sectionTop - 150)) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href').substring(1) === current) {
+            link.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

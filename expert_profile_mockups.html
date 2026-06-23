@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bản Mẫu Profile Chuyên Gia & Nhân Sự Cấp Cao — YCompass</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       RESET & BASE STYLES
+       ========================================================================== */
+    :root {
+      /* Light Mode Colors */
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --bg-tertiary: #f1f5f9;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      
+      /* Accents */
+      --primary: #0f766e;
+      --primary-hover: #115e59;
+      --primary-light: #f0fdfa;
+      
+      --accent-b2b: #1e3a8a;
+      --accent-b2b-light: #eff6ff;
+      --accent-exec: #7c2d12;
+      --accent-exec-light: #fff7ed;
+
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      
+      --font-sans: 'Plus Jakarta Sans', 'Be Vietnam Pro', sans-serif;
+      --font-serif: 'Playfair Display', serif;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Dark Mode Overrides */
+    [data-theme="dark"] {
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --bg-tertiary: #334155;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border-color: #334155;
+      
+      --primary: #2dd4bf;
+      --primary-hover: #14b8a6;
+      --primary-light: #115e59;
+      
+      --accent-b2b: #3b82f6;
+      --accent-b2b-light: #1e3a8a;
+      --accent-exec: #fb923c;
+      --accent-exec-light: #7c2d12;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      transition: var(--transition);
+      padding-bottom: 80px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ==========================================================================
+       CONTAINER & HEADER
+       ========================================================================== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border-color);
+      background-color: var(--bg-secondary);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: -0.05em;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo span {
+      background: linear-gradient(135deg, var(--primary) 0%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .theme-toggle-btn {
+      background-color: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      color: var(--text-primary);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+
+    .theme-toggle-btn:hover {
+      background-color: var(--border-color);
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       INTRO SECTION & TABS NAVIGATION
+       ========================================================================== */
+    .intro {
+      text-align: center;
+      padding: 48px 0 32px;
+    }
+
+    .intro h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .intro p {
+      color: var(--text-secondary);
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    .tabs-nav {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 40px;
+      padding: 6px;
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 50px;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 40px;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      transition: var(--transition);
+    }
+
+    .tab-btn.active {
+      background-color: var(--primary);
+      color: white;
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Tab content transitions */
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.4s ease-in-out forwards;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ==========================================================================
+       TAB 1: PUBLIC DIY MARKETPLACE PROFILE
+       ========================================================================== */
+    .profile-grid-diy {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .card-sidebar {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 24px;
+    }
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--primary-light);
+    }
+
+    .status-badge {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      background-color: #10b981;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 3px solid var(--bg-secondary);
+    }
+
+    .expert-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .expert-title {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .expert-stats {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      padding: 16px 0;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 24px;
+    }
+
+    .stat-item {
+      flex: 1;
+    }
+
+    .stat-val {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .stat-lbl {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .price-tag {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+    }
+
+    .price-tag span {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      font-family: var(--font-sans);
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(15, 118, 110, 0.3);
+    }
+
+    .profile-main {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-primary);
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 18px;
+      background-color: var(--primary);
+      border-radius: 2px;
+    }
+
+    .bio-text {
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+    }
+
+    .tags-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .tag {
+      background-color: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .tag:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Interactive Calendar Widget */
+    .calendar-widget {
+      background-color: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+
+    .cal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+      text-align: center;
+    }
+
+    .cal-day-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      padding-bottom: 8px;
+    }
+
+    .cal-day {
+      padding: 10px 0;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .cal-day:hover:not(.disabled) {
+      background-color: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .cal-day.active {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .cal-day.disabled {
+      color: var(--text-muted);
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .time-slots {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 16px;
+      display: none; /* Show only when day is active */
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .time-slot {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      padding: 10px;
+      border-radius: var(--radius-sm);
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .time-slot:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .time-slot.selected {
+      background-color: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    /* Testimonials */
+    .testimonial {
+      border-left: 3px solid var(--primary);
+      background-color: var(--bg-primary);
+      padding: 20px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-bottom: 16px;
+    }
+
+    .test-text {
+      font-style: italic;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+    }
+
+    .test-author {
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    /* ==========================================================================
+       TAB 2: ANONYMIZED B2B EXPERT PROFILE
+       ========================================================================== */
+    .profile-b2b {
+      max-width: 850px;
+      margin: 0 auto;
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    .b2b-header {
+      background-color: var(--accent-b2b-light);
+      padding: 32px 40px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .b2b-icon-avatar {
+      width: 70px;
+      height: 70px;
+      background-color: var(--accent-b2b);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .b2b-headline {
+      flex: 1;
+    }
+
+    .b2b-label-sec {
+      background-color: var(--accent-b2b);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+      width: fit-content;
+      margin-bottom: 8px;
+    }
+
+    .b2b-headline h2 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+
+    .b2b-meta-bar {
+      display: flex;
+      gap: 24px;
+      padding: 16px 40px;
+      background-color: var(--bg-tertiary);
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+
+    .b2b-body {
+      padding: 40px;
+    }
+
+    .screener-card {
+      background-color: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .screener-q {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      color: var(--accent-b2b);
+    }
+
+    .screener-a {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 24px;
+      border-left: 2px solid var(--border-color);
+      margin-top: 16px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 24px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -31px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--accent-b2b);
+      border: 3px solid var(--bg-secondary);
+    }
+
+    .timeline-date {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .timeline-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .timeline-company {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* ==========================================================================
+       TAB 3: EXECUTIVE BIOGRAPHY & ADVISORY
+       ========================================================================== */
+    .profile-exec {
+      max-width: 850px;
+      margin: 0 auto;
+      background-color: #faf9f6; /* Premium Cream background for Light Mode */
+      color: #1e1e1e;
+      border: 1px solid #d4cfc5;
+      border-radius: var(--radius-sm);
+      padding: 60px;
+      box-shadow: var(--shadow-lg);
+      font-family: var(--font-sans);
+    }
+
+    [data-theme="dark"] .profile-exec {
+      background-color: #1a202c;
+      color: #e2e8f0;
+      border-color: #2d3748;
+    }
+
+    .exec-grid {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .exec-photo-card {
+      border: 1px solid #d4cfc5;
+      padding: 8px;
+      background-color: white;
+      box-shadow: var(--shadow-sm);
+    }
+
+    [data-theme="dark"] .exec-photo-card {
+      border-color: #2d3748;
+      background-color: #1e293b;
+    }
+
+    .exec-photo {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+
+    .exec-header-text {
+      border-bottom: 2px solid #7c2d12;
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+    }
+
+    [data-theme="dark"] .exec-header-text {
+      border-color: var(--accent-exec);
+    }
+
+    .exec-name {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      font-weight: 500;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .exec-subtitle {
+      font-size: 1rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #7c2d12;
+    }
+
+    [data-theme="dark"] .exec-subtitle {
+      color: var(--accent-exec);
+    }
+
+    .exec-bio-section {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      text-align: justify;
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+
+    .exec-section-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: #1e1e1e;
+      border-bottom: 1px solid #d4cfc5;
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+    }
+
+    [data-theme="dark"] .exec-section-title {
+      color: #f8fafc;
+      border-color: #2d3748;
+    }
+
+    .board-list {
+      list-style-type: none;
+      margin-bottom: 32px;
+    }
+
+    .board-item {
+      padding: 12px 0;
+      border-bottom: 1px dashed #d4cfc5;
+    }
+
+    [data-theme="dark"] .board-item {
+      border-color: #2d3748;
+    }
+
+    .board-item:last-child {
+      border-bottom: none;
+    }
+
+    .board-role {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .board-org {
+      color: #7c2d12;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    [data-theme="dark"] .board-org {
+      color: var(--accent-exec);
+    }
+
+    /* ==========================================================================
+       BOOKING MODAL
+       ========================================================================== */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition);
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-box {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 40px;
+      width: 100%;
+      max-width: 480px;
+      box-shadow: var(--shadow-lg);
+      transform: translateY(20px);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .modal-overlay.active .modal-box {
+      transform: translateY(0);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    .modal-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .modal-desc {
+      text-align: center;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .form-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-light);
+    }
+
+    /* Success message inside modal */
+    .success-alert {
+      display: none;
+      text-align: center;
+      animation: fadeIn 0.4s forwards;
+    }
+
+    .success-icon {
+      font-size: 3rem;
+      color: #10b981;
+      margin-bottom: 16px;
+    }
+
+    /* Helper Utilities */
+    .badge-grp {
+      display: flex;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .badge-icon {
+      background-color: var(--primary-light);
+      color: var(--primary);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    /* Back button and float info */
+    .back-nav {
+      margin: 24px 0;
+    }
+    
+    .back-nav a {
+      color: var(--primary);
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .back-nav a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body data-theme="light">
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="container header-inner">
+      <div class="logo">
+        🧭 <span>YCompass</span>
+      </div>
+      <button class="theme-toggle-btn" id="themeToggleBtn">
+        🌙 Chế độ tối
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== MAIN BODY ===== -->
+  <main class="container">
+    
+    <div class="back-nav">
+      <a href="file:///Users/emilynguyen/.gemini/antigravity/brain/80b48a52-f4f3-47ce-997b-94c556c151fa/expert_profiles_research.md">← Quay lại Báo cáo Nghiên cứu</a>
+    </div>
+
+    <!-- Intro -->
+    <section class="intro">
+      <h1>Mẫu Thiết Kế Profile Chuyên Gia</h1>
+      <p>Bản phác thảo tương tác chất lượng cao mô phỏng cấu trúc hồ sơ trên các nền tảng kết nối nhân sự cấp cao và chuyên gia tư vấn lớn trên thế giới.</p>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <nav class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab('diy')">1. Công Khai (Marketplace)</button>
+      <button class="tab-btn" onclick="switchTab('b2b')">2. Ẩn Danh (B2B Network)</button>
+      <button class="tab-btn" onclick="switchTab('exec')">3. Cố Vấn Cao Cấp (Biography)</button>
+    </nav>
+
+    <!-- ==========================================
+         TAB 1: DIY MARKETPLACE PROFILE
+         ========================================== -->
+    <div id="tab-diy" class="tab-content active">
+      <div class="profile-grid-diy">
+        
+        <!-- Left Sidebar Card -->
+        <aside class="card-sidebar">
+          <div class="avatar-wrapper">
+            <img src="images/female_expert.png" alt="Chuyên gia nữ" class="avatar-img" />
+            <span class="status-badge">Sẵn sàng nhận lịch</span>
+          </div>
+          
+          <h2 class="expert-name">Hà Nguyễn, MBA</h2>
+          <p class="expert-title">Giám đốc Tăng trưởng (CGO) tại NovaTech<br>Cựu Trưởng phòng Growth Marketing tại Mekong Retail</p>
+          
+          <div class="expert-stats">
+            <div class="stat-item">
+              <div class="stat-val">4.9 ★</div>
+              <div class="stat-lbl">Đánh giá</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-val">120+</div>
+              <div class="stat-lbl">Cuộc gọi</div>
+            </div>
+          </div>
+          
+          <div class="price-tag">$4.50 <span>/ phút</span></div>
+          <button class="btn btn-primary" onclick="openBookingModal('Hà Nguyễn', '$4.50/phút')">Đăng ký tư vấn ngay</button>
+        </aside>
+
+        <!-- Right Main Info -->
+        <section class="profile-main">
+          <div class="section-title">Về tôi</div>
+          <p class="bio-text">
+            Chào bạn, tôi là Hà Nguyễn. Với hơn 12 năm kinh nghiệm trong lĩnh vực Growth Marketing và Phát triển kinh doanh trong các ngành B2C, B2B SaaS và bán lẻ tại Việt Nam cũng như khu vực Đông Nam Á. Tôi chuyên sâu về tối ưu hóa kênh chuyển đổi khách hàng mới, thiết lập mô hình vận hành tiếp thị tự động và xây dựng đội nhóm tăng trưởng tinh gọn. Rất mong được hỗ trợ tháo gỡ nút thắt kinh doanh của bạn.
+          </p>
+
+          <div class="section-title">Lĩnh vực tư vấn</div>
+          <div class="tags-grid">
+            <span class="tag">Growth Hacking</span>
+            <span class="tag">B2B Marketing</span>
+            <span class="tag">SaaS Strategy</span>
+            <span class="tag">Customer Acquisition</span>
+            <span class="tag">Marketing Automation</span>
+            <span class="tag">Team Building</span>
+          </div>
+
+          <div class="section-title">Chọn lịch hẹn trống</div>
+          <div class="calendar-widget">
+            <div class="cal-header">
+              <span>Tháng 6, 2026</span>
+              <span>Hà Nội (GMT+7)</span>
+            </div>
+            <div class="cal-grid">
+              <span class="cal-day-label">T2</span>
+              <span class="cal-day-label">T3</span>
+              <span class="cal-day-label">T4</span>
+              <span class="cal-day-label">T5</span>
+              <span class="cal-day-label">T6</span>
+              <span class="cal-day-label">T7</span>
+              <span class="cal-day-label">CN</span>
+
+              <span class="cal-day disabled">22</span>
+              <span class="cal-day active" onclick="selectDate(23)">23</span>
+              <span class="cal-day" onclick="selectDate(24)">24</span>
+              <span class="cal-day" onclick="selectDate(25)">25</span>
+              <span class="cal-day" onclick="selectDate(26)">26</span>
+              <span class="cal-day disabled">27</span>
+              <span class="cal-day disabled">28</span>
+            </div>
+            
+            <!-- Time slots (shown when day clicked) -->
+            <div class="time-slots" id="timeSlotsContainer" style="display: grid;">
+              <div class="time-slot" onclick="selectTimeSlot(this)">09:00 SA</div>
+              <div class="time-slot" onclick="selectTimeSlot(this)">02:00 CH</div>
+              <div class="time-slot" onclick="selectTimeSlot(this)">04:30 CH</div>
+            </div>
+          </div>
+
+          <div class="section-title">Đánh giá nổi bật</div>
+          <div class="testimonial">
+            <p class="test-text">"Chị Hà đã giúp chúng tôi định vị lại toàn bộ phễu chuyển đổi cho ứng dụng SaaS. Các đề xuất của chị vô cùng thực chiến và dễ áp dụng đối với đội nhóm phát triển nhỏ của chúng tôi."</p>
+            <div class="test-author">Minh Trần — Co-Founder tại NovaTech</div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- ==========================================
+         TAB 2: ANONYMIZED B2B EXPERT PROFILE
+         ========================================== -->
+    <div id="tab-b2b" class="tab-content">
+      <div class="profile-b2b">
+        
+        <!-- Header -->
+        <div class="b2b-header">
+          <div class="b2b-icon-avatar">👤</div>
+          <div class="b2b-headline">
+            <div class="b2b-label-sec">HỒ SƠ ĐÃ KHẢO SÁT & XÁC MINH</div>
+            <h2>Cựu Giám đốc Chuỗi cung ứng tại Tập đoàn Bán lẻ Top 3 Việt Nam</h2>
+          </div>
+        </div>
+
+        <!-- Meta Bar -->
+        <div class="b2b-meta-bar">
+          <span>Khách hàng mục tiêu: Doanh nghiệp F&B, E-commerce</span>
+          <span>•</span>
+          <span>Số năm kinh nghiệm: 18 năm</span>
+          <span>•</span>
+          <span>Tính cập nhật: Đã rời vị trí cách đây 6 tháng</span>
+        </div>
+
+        <!-- Body -->
+        <div class="b2b-body">
+          <div class="section-title" style="color: var(--accent-b2b); font-size: 1.15rem;">Câu trả lời sàng lọc (Screener Answers)</div>
+          
+          <div class="screener-card">
+            <p class="screener-q">Q: Ông/Bà có thể chia sẻ kinh nghiệm xử lý đứt gãy chuỗi cung ứng thực phẩm tươi sống trong giai đoạn biến động lớn không?</p>
+            <p class="screener-a">A: Tôi từng trực tiếp điều phối đội ngũ 150 nhân sự chuyển đổi 80% luồng cung ứng từ các nguồn cung tập trung sang các vệ tinh địa phương chỉ trong vòng 5 ngày. Đảm bảo nguồn hàng rau củ quả không bị gián đoạn và kiểm soát tỷ lệ hao hụt dưới 4% (mức thông thường của thị trường là 12%).</p>
+          </div>
+
+          <div class="screener-card">
+            <p class="screener-q">Q: Kinh nghiệm của Ông/Bà đối với việc thiết lập và vận hành hệ thống kho lạnh (Cold chain)?</p>
+            <p class="screener-a">A: Tôi từng giám sát xây dựng và thiết lập quy trình vận hành cho 3 trung tâm phân phối kho lạnh tiêu chuẩn quốc tế lớn tại TP.HCM và Bình Dương với tổng mức đầu tư trên 12 triệu USD. Am hiểu tường tận về các thiết bị phần cứng, phần mềm WMS quản lý nhiệt độ thời gian thực.</p>
+          </div>
+
+          <div class="section-title" style="color: var(--accent-b2b); font-size: 1.15rem; margin-top: 32px;">Lịch sử sự nghiệp ẩn danh</div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">2020 - 2025</div>
+              <div class="timeline-title">Giám đốc Chuỗi cung ứng Toàn quốc</div>
+              <div class="timeline-company">Tập đoàn Chuỗi Siêu thị Hàng đầu Việt Nam (Quy mô >500 điểm bán)</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2014 - 2020</div>
+              <div class="timeline-title">Trưởng phòng Vận hành Logistics cấp cao</div>
+              <div class="timeline-company">Công ty E-commerce Đa quốc gia (Top 2 thị trường Việt Nam)</div>
+            </div>
+          </div>
+          
+          <div style="margin-top: 32px; text-align: center;">
+            <button class="btn btn-primary" style="background-color: var(--accent-b2b); width: auto; padding-left: 40px; padding-right: 40px;" onclick="openBookingModal('Chuyên gia Chuỗi cung ứng (Ẩn danh)', 'Báo giá theo Dự án')">
+              Yêu cầu phỏng vấn chuyên gia này
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==========================================
+         TAB 3: EXECUTIVE BIOGRAPHY & ADVISORY
+         ========================================== -->
+    <div id="tab-exec" class="tab-content">
+      <div class="profile-exec">
+        
+        <div class="exec-grid">
+          
+          <!-- Image and quick details -->
+          <div>
+            <div class="exec-photo-card">
+              <img src="images/male_executive.png" alt="Andrew Nguyen Photo" class="exec-photo" />
+            </div>
+            <div style="margin-top: 24px; text-align: center;">
+              <button class="btn btn-primary" style="background-color: #7c2d12; border-radius: 0; font-size: 0.85rem;" onclick="openBookingModal('Andrew Nguyen', 'Cố vấn HĐQT / Dự án đặc biệt')">
+                LIÊN HỆ ĐẶT LỊCH HỘI CHẨN
+              </button>
+            </div>
+          </div>
+
+          <!-- Main Bio Content -->
+          <div>
+            <div class="exec-header-text">
+              <h2 class="exec-name">Andrew Nguyen, Ph.D.</h2>
+              <p class="exec-subtitle">Thành viên HĐQT Độc lập & Cố vấn Chiến lược Quản trị Doanh nghiệp</p>
+            </div>
+
+            <div class="exec-bio-section">
+              <p style="margin-bottom: 16px;">
+                Tiến sĩ Andrew Nguyen là một chuyên gia quản trị và điều hành doanh nghiệp kỳ cựu với hơn 25 năm hoạt động thực chiến tại khu vực Châu Á - Thái Bình Dương. Ông chuyên sâu cố vấn cho các tập đoàn đa quốc gia và tổng công ty gia đình lớn trong giai đoạn chuyển đổi mô hình kinh doanh, tái cấu trúc tài chính và xây dựng hệ thống quản trị rủi ro tiên tiến.
+              </p>
+              <p>
+                Trước khi hoạt động với tư cách Thành viên Hội đồng quản trị độc lập, ông từng giữ chức vụ Giám đốc Điều hành (CEO) của Saigon Capital trong 8 năm và có thời gian dài làm việc tại văn phòng cố vấn chiến lược McKinsey & Company tại Singapore. Ông nổi tiếng với năng lực định hình tầm nhìn dài hạn và kiến tạo văn hóa minh bạch cho tổ chức.
+              </p>
+            </div>
+
+            <h3 class="exec-section-title">Kinh nghiệm Hội đồng quản trị hiện tại</h3>
+            <ul class="board-list">
+              <li class="board-item">
+                <div class="board-role">Thành viên Hội đồng quản trị độc lập</div>
+                <div class="board-org">NovaTech JSC — Ủy ban Kiểm toán & Nhân sự</div>
+              </li>
+              <li class="board-item">
+                <div class="board-role">Chủ tịch Hội đồng cố vấn Chiến lược</div>
+                <div class="board-org">VietGroup Corp — Ban chuyển đổi tổ chức bền vững</div>
+              </li>
+              <li class="board-item">
+                <div class="board-role">Cố vấn cao cấp Ban Giám đốc</div>
+                <div class="board-org">An Phát Logistics — Phát triển thị trường nước ngoài</div>
+              </li>
+            </ul>
+
+            <h3 class="exec-section-title">Bằng cấp & Học thuật nổi bật</h3>
+            <ul class="board-list">
+              <li class="board-item">
+                <div class="board-role">Tiến sĩ Quản trị Kinh doanh (Ph.D. in Management)</div>
+                <div class="board-org">Trường Kinh doanh Stanford (Stanford Graduate School of Business), Hoa Kỳ</div>
+              </li>
+              <li class="board-item">
+                <div class="board-role">Thành viên Chuyên nghiệp được Chứng nhận (Certified Director)</div>
+                <div class="board-org">Viện Thành viên Hội đồng Quản trị Việt Nam (VIOD)</div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ===== BOOKING MODAL ===== -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeBookingModal()">✕</button>
+      
+      <!-- Form state -->
+      <div id="bookingFormState">
+        <h3 class="modal-title">Đặt lịch hội chẩn</h3>
+        <p class="modal-desc">Bạn đang đăng ký kết nối với chuyên gia <strong id="modalExpertName"></strong> (<span id="modalExpertPrice"></span>)</p>
+        
+        <div class="form-group">
+          <label class="form-label" for="userName">Họ và tên của bạn</label>
+          <input type="text" id="userName" class="form-input" placeholder="Ví dụ: Nguyễn Văn A" required />
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label" for="userEmail">Email doanh nghiệp</label>
+          <input type="email" id="userEmail" class="form-input" placeholder="ten@doanhnghiep.com" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="userPhone">Số điện thoại liên hệ</label>
+          <input type="tel" id="userPhone" class="form-input" placeholder="Ví dụ: 0901234567" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="problemDesc">Tóm tắt ngắn gọn vấn đề cần tư vấn</label>
+          <textarea id="problemDesc" class="form-input" style="height: 100px; resize: none;" placeholder="Ví dụ: Cần rà soát quy trình kho bãi thực phẩm đông lạnh..."></textarea>
+        </div>
+
+        <button class="btn btn-primary" style="margin-top: 10px;" onclick="submitBooking()">Xác nhận thông tin & Gửi yêu cầu</button>
+      </div>
+
+      <!-- Success state -->
+      <div id="bookingSuccessState" class="success-alert">
+        <div class="success-icon">✓</div>
+        <h3 class="modal-title">Đăng ký thành công!</h3>
+        <p class="modal-desc" style="margin-bottom: 0;">YCompass đã tiếp nhận thông tin của bạn. Đội ngũ Support sẽ liên hệ lại trong vòng 2 giờ làm việc để hoàn tất xác minh và lên lịch.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== JAVASCRIPT LOGIC ===== -->
+  <script>
+    // Tab Switching Logic
+    function switchTab(tabId) {
+      // Hide all contents
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.remove('active');
+      });
+      
+      // Remove active class from all buttons
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      
+      // Show target tab content
+      document.getElementById('tab-' + tabId).classList.add('active');
+      
+      // Find the button that was clicked and set it active
+      event.currentTarget.classList.add('active');
+    }
+
+    // Interactive Calendar Day Selection
+    function selectDate(dayNum) {
+      document.querySelectorAll('.cal-day').forEach(day => {
+        day.classList.remove('active');
+      });
+      event.currentTarget.classList.add('active');
+      
+      // Smoothly show time slots when a date is selected
+      const slots = document.getElementById('timeSlotsContainer');
+      slots.style.display = 'grid';
+    }
+
+    function selectTimeSlot(slotElement) {
+      document.querySelectorAll('.time-slot').forEach(slot => {
+        slot.classList.remove('selected');
+      });
+      slotElement.classList.add('selected');
+    }
+
+    // Modal Control
+    const modal = document.getElementById('bookingModal');
+    
+    function openBookingModal(expertName, priceText) {
+      document.getElementById('modalExpertName').innerText = expertName;
+      document.getElementById('modalExpertPrice').innerText = priceText;
+      
+      // Reset form states
+      document.getElementById('bookingFormState').style.display = 'block';
+      document.getElementById('bookingSuccessState').style.display = 'none';
+      
+      modal.classList.add('active');
+    }
+
+    function closeBookingModal() {
+      modal.classList.remove('active');
+    }
+
+    // Handle form submit
+    function submitBooking() {
+      // Basic validation
+      const name = document.getElementById('userName').value;
+      const email = document.getElementById('userEmail').value;
+      const phone = document.getElementById('userPhone').value;
+
+      if (!name || !email || !phone) {
+        alert('Vui lòng điền đầy đủ các thông tin bắt buộc (Họ tên, Email và Số điện thoại).');
+        return;
+      }
+
+      // Transition to success state
+      document.getElementById('bookingFormState').style.display = 'none';
+      document.getElementById('bookingSuccessState').style.display = 'block';
+    }
+
+    // Theme Toggle Logic
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = document.body.getAttribute('data-theme');
+      if (currentTheme === 'dark') {
+        document.body.setAttribute('data-theme', 'light');
+        themeToggleBtn.innerText = '🌙 Chế độ tối';
+      } else {
+        document.body.setAttribute('data-theme', 'dark');
+        themeToggleBtn.innerText = '☀️ Chế độ sáng';
+      }
+    });
+  </script>
+</body>
+</html>

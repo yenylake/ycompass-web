@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ảnh Chụp Thực Tế Các Nền Tảng Chuyên Gia Toàn Cầu — YCompass</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-dark: #0b0f19;
+      --bg-card: rgba(22, 30, 49, 0.7);
+      --border-glass: rgba(255, 255, 255, 0.08);
+      --text-white: #f8fafc;
+      --text-gray: #94a3b8;
+      --primary-cyan: #06b6d4;
+      --primary-cyan-hover: #0891b2;
+      --accent-purple: #8b5cf6;
+      --shadow-glow: 0 0 25px rgba(6, 182, 212, 0.15);
+      
+      --font-sans: 'Plus Jakarta Sans', 'Be Vietnam Pro', sans-serif;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.08) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.08) 0px, transparent 50%);
+      color: var(--text-white);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== */
+    header {
+      padding: 20px 40px;
+      background: rgba(11, 15, 25, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-glass);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--text-white);
+      letter-spacing: -0.03em;
+    }
+
+    .brand span {
+      background: linear-gradient(135deg, var(--primary-cyan) 0%, var(--accent-purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .back-btn {
+      color: var(--text-gray);
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      transition: var(--transition);
+    }
+
+    .back-btn:hover {
+      color: var(--text-white);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--primary-cyan);
+    }
+
+    /* ==========================================================================
+       WORKSPACE LAYOUT
+       ========================================================================== */
+    .app-workspace {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      overflow: hidden;
+    }
+
+    /* Sidebar (Menu) */
+    .sidebar {
+      background: rgba(15, 23, 42, 0.5);
+      border-right: 1px solid var(--border-glass);
+      padding: 30px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-gray);
+      margin-bottom: 8px;
+    }
+
+    .menu-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .menu-item {
+      background: none;
+      border: 1px solid transparent;
+      padding: 14px 18px;
+      border-radius: 12px;
+      color: var(--text-gray);
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      transition: var(--transition);
+    }
+
+    .menu-item:hover {
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text-white);
+      border-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .menu-item.active {
+      background: var(--bg-card);
+      color: var(--text-white);
+      border-color: var(--primary-cyan);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .menu-item-platform {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--primary-cyan);
+    }
+
+    .menu-item.active .menu-item-platform {
+      color: #fff;
+    }
+
+    /* Main Showcase Area */
+    .showcase {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      overflow: hidden;
+      background: rgba(11, 15, 25, 0.4);
+    }
+
+    .showcase-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .screenshot-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .screenshot-desc {
+      color: var(--text-gray);
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+
+    /* Zoom & Pan Controls */
+    .controls {
+      display: flex;
+      gap: 8px;
+    }
+
+    .control-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      color: var(--text-white);
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+
+    .control-btn:hover {
+      background: var(--primary-cyan);
+      border-color: var(--primary-cyan);
+    }
+
+    /* Web Browser Container Mockup */
+    .browser-frame {
+      flex: 1;
+      background: #1e293b;
+      border: 1px solid var(--border-glass);
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+    }
+
+    .browser-header {
+      background: #0f172a;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .browser-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .browser-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #334155;
+    }
+
+    .browser-dot.red { background: #ef4444; }
+    .browser-dot.yellow { background: #f59e0b; }
+    .browser-dot.green { background: #10b981; }
+
+    .browser-address {
+      flex: 1;
+      background: #1e293b;
+      padding: 6px 16px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: var(--text-gray);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .browser-viewport {
+      flex: 1;
+      overflow: auto;
+      background: #0f172a;
+      position: relative;
+      cursor: grab;
+      user-select: none;
+    }
+
+    .browser-viewport:active {
+      cursor: grabbing;
+    }
+
+    .screenshot-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transform-origin: top left;
+      transition: transform 0.2s cubic-bezier(0.1, 0.8, 0.2, 1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="brand">
+      🧭 <span>YCompass Intelligence</span>
+    </div>
+    <a href="file:///Users/emilynguyen/.gemini/antigravity/brain/80b48a52-f4f3-47ce-997b-94c556c151fa/expert_profiles_research.md" class="back-btn">
+      ← Quay lại Báo cáo Nghiên cứu
+    </a>
+  </header>
+
+  <!-- ===== APP WORKSPACE ===== -->
+  <div class="app-workspace">
+    
+    <!-- Sidebar navigation -->
+    <aside class="sidebar">
+      <div>
+        <h2>Public Marketplaces</h2>
+        <div class="menu-group">
+          <button class="menu-item active" onclick="loadScreenshot('clarity_danmartell.png', 'https://clarity.fm/danmartell', 'Clarity.fm — Hồ sơ Dan Martell', 'Ảnh chụp thực tế trang cá nhân của Dan Martell (Nhà sáng lập & Cố vấn nổi tiếng) trên Clarity.fm. Chú ý nút Book Call và mức phí theo phút.')">
+            <span class="menu-item-platform">Clarity.fm</span>
+            <span>Profile Chuyên Gia Công Khai</span>
+          </button>
+          
+          <button class="menu-item" onclick="loadScreenshot('adplist_felix.png', 'https://adplist.org/mentors/felix-lee', 'ADPList — Hồ sơ Mentorship Felix Lee', 'Ảnh chụp thực tế trang của Felix Lee (Co-Founder ADPList) với khối đặt lịch tư vấn, kinh nghiệm làm việc và các đánh giá nổi bật từ học viên.')">
+            <span class="menu-item-platform">ADPList</span>
+            <span>Profile Cố Vấn / Mentorship</span>
+          </button>
+          
+          <button class="menu-item" onclick="loadScreenshot('adplist_home.png', 'https://adplist.org/', 'ADPList — Trang Chủ Hệ Sinh Thái', 'Trang chủ nền tảng kết nối cố vấn công nghệ lớn nhất toàn cầu. Thể hiện các chủ đề chuyên sâu và bộ lọc chuyên gia.')">
+            <span class="menu-item-platform">ADPList</span>
+            <span>Trang Chủ Nền Tảng</span>
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <h2>B2B Expert Networks</h2>
+        <div class="menu-group">
+          <button class="menu-item" onclick="loadScreenshot('glg_home.png', 'https://glginsights.com/', 'GLG Insights — Trang Chủ Mạng Lưới Lớn Nhất', 'Cổng giao tiếp của Gerson Lehrman Group (GLG). Nền tảng B2B kết nối các định chế tài chính lớn với chuyên gia ẩn danh.')">
+            <span class="menu-item-platform">GLG Insights</span>
+            <span>Trang Chủ Cổng Doanh Nghiệp</span>
+          </button>
+
+          <button class="menu-item" onclick="loadScreenshot('alphasights_home.png', 'https://www.alphasights.com/', 'AlphaSights — Hệ Thống Tư Vấn Quỹ Đầu Tư', 'Trang chủ AlphaSights. Thể hiện cách định vị dịch vụ tư vấn cao cấp và quy chuẩn bảo mật dự án.')">
+            <span class="menu-item-platform">AlphaSights</span>
+            <span>Trang Chủ Mạng Lưới B2B</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Viewport Showcase -->
+    <main class="showcase">
+      <div class="showcase-header">
+        <div>
+          <h1 class="screenshot-title" id="titleText">Clarity.fm — Hồ sơ Dan Martell</h1>
+          <p class="screenshot-desc" id="descText">Ảnh chụp thực tế trang cá nhân của Dan Martell (Nhà sáng lập & Cố vấn nổi tiếng) trên Clarity.fm. Chú ý nút Book Call và mức phí theo phút.</p>
+        </div>
+        
+        <!-- Controls -->
+        <div class="controls">
+          <button class="control-btn" onclick="zoom(0.1)" title="Phóng to">+</button>
+          <button class="control-btn" onclick="zoom(-0.1)" title="Thu nhỏ">-</button>
+          <button class="control-btn" onclick="resetZoom()" title="Đặt lại">1:1</button>
+        </div>
+      </div>
+
+      <!-- Browser Container -->
+      <div class="browser-frame">
+        <div class="browser-header">
+          <div class="browser-dots">
+            <div class="browser-dot red"></div>
+            <div class="browser-dot yellow"></div>
+            <div class="browser-dot green"></div>
+          </div>
+          <div class="browser-address">
+            🔒 <span id="addressText">https://clarity.fm/danmartell</span>
+          </div>
+        </div>
+        
+        <div class="browser-viewport" id="viewport">
+          <img src="images/clarity_danmartell.png" alt="Screenshot" class="screenshot-img" id="screenshotImg" />
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- ===== INTERACTIVE SCRIPT ===== -->
+  <script>
+    let scale = 1.0;
+    const img = document.getElementById('screenshotImg');
+    const viewport = document.getElementById('viewport');
+
+    function loadScreenshot(fileName, url, title, desc) {
+      // Set active menu item
+      document.querySelectorAll('.menu-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      event.currentTarget.classList.add('active');
+
+      // Update text details
+      document.getElementById('titleText').innerText = title;
+      document.getElementById('descText').innerText = desc;
+      document.getElementById('addressText').innerText = url;
+
+      // Update image
+      img.src = 'images/' + fileName;
+      resetZoom();
+    }
+
+    function zoom(amount) {
+      scale = Math.min(Math.max(0.3, scale + amount), 3.0);
+      applyTransform();
+    }
+
+    function resetZoom() {
+      scale = 1.0;
+      applyTransform();
+      viewport.scrollLeft = 0;
+      viewport.scrollTop = 0;
+    }
+
+    function applyTransform() {
+      img.style.transform = `scale(${scale})`;
+    }
+
+    // Drag-to-Scroll implementation
+    let isDown = false;
+    let startX, startY;
+    let scrollLeft, scrollTop;
+
+    viewport.addEventListener('mousedown', (e) => {
+      isDown = true;
+      viewport.style.cursor = 'grabbing';
+      startX = e.pageX - viewport.offsetLeft;
+      startY = e.pageY - viewport.offsetTop;
+      scrollLeft = viewport.scrollLeft;
+      scrollTop = viewport.scrollTop;
+    });
+
+    viewport.addEventListener('mouseleave', () => {
+      isDown = false;
+      viewport.style.cursor = 'grab';
+    });
+
+    viewport.addEventListener('mouseup', () => {
+      isDown = false;
+      viewport.style.cursor = 'grab';
+    });
+
+    viewport.addEventListener('mousemove', (e) => {
+      if(!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - viewport.offsetLeft;
+      const y = e.pageY - viewport.offsetTop;
+      const walkX = (x - startX) * 1.5;
+      const walkY = (y - startY) * 1.5;
+      viewport.scrollLeft = scrollLeft - walkX;
+      viewport.scrollTop = scrollTop - walkY;
+    });
+  </script>
+</body>
+</html>
